@@ -8,6 +8,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/api/auth', require('./routes/auth.routes'))
+app.use('/api/animals',require('./routes/animal.routes'))
 
 
 
