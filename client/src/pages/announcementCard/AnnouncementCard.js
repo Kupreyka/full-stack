@@ -22,9 +22,9 @@ const AnnouncementCard = (props) => {
                 </div>
                 <div className="card-content">
                     <p><b>City:</b> {props.city}</p>
-                    <p><b>Street Address:</b> {props.streetAddress}</p>
                     <p><b>Number phone:</b> {props.phoneNumber}</p>
                     <p><b>Data:</b> {props.data.substring(0, 10)}</p>
+                    <p style={{height:"3em"}}><b>Street Address:</b> {props.streetAddress}</p>
                 </div>
                 <div className="card-action">
                     <NavLink to={"/adpage"} onClick={submitData}><b>More...</b></NavLink>

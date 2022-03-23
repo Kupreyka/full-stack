@@ -1,4 +1,5 @@
 const SET_DATA_AD_PAGE = 'adpage/SET_DATA_AD_PAGE'
+const SET_MESSAGE_DATA = 'adpage/SET_MESSAGE_DATA'
 
 const initialState = {
     animalImg: null,
@@ -7,7 +8,8 @@ const initialState = {
     city: null,
     phoneNumber: null,
     data: null,
-    description: null
+    description: null,
+    messageData: []
 }
 
 export const adPageReducer = (state = initialState, action) => {
@@ -23,6 +25,13 @@ export const adPageReducer = (state = initialState, action) => {
                 data: action.data,
                 description: action.description
             }
+        case SET_MESSAGE_DATA:
+            let stateCopy = {...state}
+            stateCopy.messageData = [...state.messageData]
+            stateCopy.messageData.push(
+                {name: action.name, phone: action.phone, comment: action.comment}
+            );
+            return stateCopy;
         default:
             return state
     }
@@ -38,3 +47,5 @@ export const setAdPageData = (animalImg, animalName, streetAddress, city, phoneN
     data,
     description
 })
+
+export const setMessageData = (name, phone, comment) => ({type: SET_MESSAGE_DATA, name, phone, comment})
