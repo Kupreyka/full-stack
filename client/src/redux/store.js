@@ -1,10 +1,12 @@
 import {applyMiddleware, combineReducers, compose, createStore} from "redux";
 import {announcementReducer} from "./reducers/announcementReducer";
 import thunkMiddleware from "redux-thunk";
+import {adPageReducer} from "./reducers/adPageReducer";
 
 
 const Reducers = combineReducers({
-    announcement: announcementReducer
+    announcement: announcementReducer,
+    adpage: adPageReducer
 })
 
 

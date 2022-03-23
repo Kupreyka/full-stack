@@ -1,12 +1,8 @@
 const express = require('express');
 const {faker} = require('@faker-js/faker');
 const _ = require('lodash');
-const request = require('request');
-const axios = require("axios");
 const router = express.Router();
-const animals = require('random-animals-api');
-const config = require('../config/default.json')
-const {response} = require("express");
+
 
 
 router.get('/',  function (req, res, next) {
@@ -19,23 +15,18 @@ router.get('/',  function (req, res, next) {
     res.send(
         _.times(count,  () => {
             return {
-                firstName: faker.name.firstName(),
-                lastName: faker.name.lastName(),
+                findName: faker.name.findName(),
+                animalName: faker.name.firstName(),
+                city: faker.address.city(),
                 streetAddress: faker.address.streetAddress(),
                 phoneNumber: faker.phone.phoneNumber(),
+                data: faker.date.past(),
                 email: faker.internet.email(),
-                userImg: faker.image.animals(400, 600, true)
+                animalImg: faker.image.animals(400, 600, true),
+                description: faker.lorem.paragraph()
             };
         })
     );
 });
-
-/*
-router.get('/img', async (req, res) => {
-    let response = await axios.get('https://aws.random.cat/meow');
-    console.log(response.data.file)
-    res.json({img: response.data.file})
-})
-*/
 
 module.exports = router;

@@ -1,8 +1,9 @@
 import React from 'react'
 import {Redirect, Route, Switch} from "react-router-dom";
-import {AdPage} from "./pages/AdPage";
+import AdPage from "./pages/AdPage";
 import {AuthPage} from "./pages/AuthPage";
 import AnnouncementPage from "./pages/AnnouncementPage";
+
 
 
 export const useRoutes = isAuthenticated => {

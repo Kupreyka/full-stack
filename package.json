@@ -28,6 +28,7 @@
     "lodash": "^4.17.21",
     "mongoose": "^6.2.7",
     "random-animals-api": "^1.2.6",
+    "react-preload-image": "^1.0.7",
     "redux-thunk": "^2.4.1",
     "request": "^2.88.2"
   }

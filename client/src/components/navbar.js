@@ -12,7 +12,7 @@ export const Navbar = () => {
     }
 
     return (
-        <nav>
+        <nav style={{marginBottom:'2rem'}} className="sticky">
             <div className="nav-wrapper blue-grey darken-1" style={{padding: '0 2rem'}}>
                 <span className="brand-logo">AnimalFinderApp</span>
                 <ul id="nav-mobile" className="right hide-on-med-and-down">
